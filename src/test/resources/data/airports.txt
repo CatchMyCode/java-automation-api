@@ -1,0 +1,128 @@
+DRW,Darwin
+OOL,Gold Coast
+MEL,Melbourne
+PER,Perth
+SYD,Sydney
+BWN,Brunei
+PNH,Phnom Penh
+REP,Siem Reap
+PEK,Beijing
+CSX,Changsha
+CTU,Chengdu
+CKG,Chongqing
+CAN,Guangzhou
+KWL,Guilin
+HGH,Hangzhou
+KMG,Kunming
+NNG,Nanning
+PVG,Shanghai
+SZX,Shenzhen
+WUH,Wuhan
+XIY,Xi'an
+HKG,Hong Kong
+BLR,Bengaluru
+IXC,Chandigarh
+MAA,Chennai
+GOI,Goa
+HYD,Hyderabad
+JAI,Jaipur
+COK,Kochi
+CCU,Kolkata
+PNQ,Pune
+TRZ,Tiruchirappalli
+VTZ,Visakhapatnam
+DPS,Bali
+BPN,Balikpapan
+BTJ,Banda Aceh
+BDO,Bandung
+CGK,Jakarta
+LOP,Lombok
+UPG,Makassar
+MDC,Manado
+KNO,Medan - Kualanamu
+PDG,Padang
+PLM,Palembang
+PKU,Pekanbaru
+SRG,Semarang
+SOC,Solo
+SUB,Surabaya
+JOG,Yogyakarta
+PNK,Pontianak
+KIX,Osaka - Kansai
+CTS,Sapporo - Shin-Chitose
+HND,Tokyo - Haneda
+NRT,Tokyo - Narita
+VTE,Vientiane
+MFM,Macau
+AOR,Alor Setar
+BTU,Bintulu
+JHB,Johor Bahru
+KBR,Kota Bharu
+BKI,Kota Kinabalu
+KUL,Kuala Lumpur
+TGG,Kuala Terengganu
+KCH,Kuching
+LBU,Labuan
+LGK,Langkawi
+MYY,Miri
+PEN,Penang
+SDK,Sandakan
+SBW,Sibu
+TWU,Tawau
+MDL,Mandalay
+NYT,Nay Pyi Taw
+RGN,Yangon
+KTM,Kathmandu
+CGY,Cagayan de Oro
+CEB,Cebu
+CRK,Clark
+DVO,Davao
+KLO,Kalibo - Boracay
+MNL,Manila
+PPS,Puerto Princesa - Palawan
+TAC,Tacloban
+TAG,Tagbilaran
+JED,Jeddah
+SIN,Singapore
+PUS,Busan
+ICN,Seoul
+CMB,Colombo
+TPE,Taipei
+DMK,Bangkok - Don Mueang
+BFV,Buri Ram
+CNX,Chiang Mai
+CEI,Chiang Rai
+HDY,Hat Yai
+KKC,Khon Kaen
+KBV,Krabi
+LOE,Loei
+KOP,Nakhon Phanom
+NST,Nakhon Si Thammarat
+NNT,Nan
+NAW,Narathiwat
+PHS,Phitsanulok
+HKT,Phuket
+ROI,Roi Et
+SNO,Sakon Nakhon
+URT,Surat Thani
+TST,Trang
+UBP,Ubon Ratchathani
+UTH,Udon Thani
+City transfer,Thailand
+Pai Bus Station,Pai
+Historical Park,Sukhothai
+Indochina Market,Mukdahan
+Kud Nam Kin Park,Kalasin
+Sermthai Complex,Mahasarakham
+Island transfer,Thailand
+Sunrise Beach,Lipe
+KohNgai Villa,Ngai
+Seatran pier,Tao Island
+Manoh pier,Yao Noi
+Lipa Noi Pier,Samui
+Thong Sala Pier,Phangan
+Phi Phi Pier,Phi Phi
+Saladan Pier,Lanta
+DAD,Da Nang
+HAN,Hanoi
+SGN,Ho Chi Minh City

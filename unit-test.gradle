@@ -1,0 +1,47 @@
+//
+// Common unit testing setup
+//
+// Assumes the following values are already set: mockitoVersion, testngVersion
+//
+ext {
+    unitTestingMinHeapSize = "512m"
+}
+
+dependencies {
+
+    testCompile "org.mockito:mockito-all:$mockitoVersion"
+    testCompile "org.springframework:spring-test:$springVersion"
+    testCompile("org.testng:testng:$testngVersion") {
+        exclude group: "junit", module: "junit"
+    }
+    testCompile "org.apache.commons:commons-pool2:$apacheCommonsPool2Version"
+
+}
+
+test {
+
+    for (String key : System.getProperties().keySet()) {
+        systemProperty key, System.properties["$key"]
+    }
+
+    jvmArgs "-XX:-UseSplitVerifier"
+
+    useTestNG { useDefaultListeners = true }
+
+    beforeTest { descriptor ->
+        logger.lifecycle("Running: " + descriptor)
+    }
+
+    minHeapSize = "$unitTestingMinHeapSize"
+    jvmArgs '-XX:+UseConcMarkSweepGC', '-XX:+CMSIncrementalMode' //,'-XX:+PrintGCDetails','-XX:+PrintGCTimeStamps'
+    if (System.getProperty("test.profile", "false").equals("true")) {
+        jvmArgs "-noverify", "-agentpath:${profilerDir}/lib/deployed/jdk16/mac/libprofilerinterface.jnilib=${profilerDir}/lib,5140,0"
+    }
+    // listen to standard out and standard error of the test JVM(s)
+    onOutput { descriptor, event ->
+        // logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message )
+        if (event.destination == TestOutputEvent.Destination.StdErr) {
+            logger.error("  ERROR: " + event.message.trim())
+        }
+    }
+}

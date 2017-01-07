@@ -1,0 +1,36 @@
+sourceSets {
+    integrationTest {
+        compileClasspath = sourceSets.main.output + configurations.testCompile + configurations.integrationTestCompile
+        runtimeClasspath = output + sourceSets.main.output + configurations.testRuntime + configurations.integrationTestRuntime
+    }
+}
+
+task integrationTest(type: Test, dependsOn: [
+        test
+]) {
+    useTestNG { useDefaultListeners = true }
+    testLogging.showStandardStreams = true
+    testClassesDir = sourceSets.integrationTest.output.classesDir
+    classpath = sourceSets.integrationTest.runtimeClasspath
+
+    beforeTest { descriptor ->
+        logger.lifecycle("Running: " + descriptor)
+    }
+    minHeapSize = '3g'
+    jvmArgs '-XX:+UseConcMarkSweepGC', '-XX:+CMSIncrementalMode'
+    if (System.getProperty("test.profile", "false").equals("true")) {
+        jvmArgs "-noverify", "-agentpath:${profilerDir}/lib/deployed/jdk16/mac/libprofilerinterface.jnilib=${profilerDir}/lib,5140,0"
+    }
+
+    // listen to standard out and standard error of the test JVM(s)
+    onOutput { descriptor, event ->
+        // logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message )
+        if (event.destination == TestOutputEvent.Destination.StdErr) {
+            logger.error("  ERROR: " + event.message.trim())
+        }
+    }
+}
+
+compileIntegrationTestJava.dependsOn compileTestJava
+integrationTestClasses.dependsOn testClasses
+processIntegrationTestResources.dependsOn processTestResources

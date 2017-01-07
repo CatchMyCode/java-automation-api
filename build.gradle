@@ -1,0 +1,55 @@
+group 'org.catchmycode'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url 'http://repo.springsource.org/plugins-release' }
+
+    dependencies {
+//        classpath "org.springframework.build.gradle:propdeps-plugin:$propdepsPluginVersion"
+    }
+}
+apply plugin: 'java'
+apply from: "./integration-test.gradle"
+apply from: "./jar-artifacts.gradle"
+apply from: "./unit-test.gradle"
+
+configure(allprojects) {
+//    apply plugin: 'propdeps'
+//    apply plugin: 'propdeps-maven'
+//    apply plugin: 'propdeps-eclipse'
+}
+
+dependencies {
+    compile "org.slf4j:slf4j-api:$slf4jVersion"
+    compile "org.mockito:mockito-all:$mockitoVersion"
+    compile("org.testng:testng:$testngVersion") {
+        exclude group: "junit", module: "junit"
+    }
+    compile "org.slf4j:jcl-over-slf4j:$slf4jVersion"
+    compile "org.slf4j:jul-to-slf4j:$slf4jVersion"
+    compile "org.slf4j:log4j-over-slf4j:$slf4jVersion"
+    compile "ch.qos.logback:logback-classic:$logbackVersion"
+    compile "joda-time:joda-time:$jodaTimeVersion"
+    compile "commons-configuration:commons-configuration:$apacheCommonsConfigurationVersion"
+    compile "commons-io:commons-io:$apacheCommonsIoVersion"
+    compile "com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion"
+    compile "com.fasterxml.jackson.core:jackson-core:$jacksonVersion"
+    compile "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-joda:$jacksonVersion"
+    compile "com.fasterxml.jackson.dataformat:jackson-dataformat-smile:$jacksonVersion"
+    compile "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:$jacksonVersion"
+    compile "org.apache.httpcomponents:httpclient:$httpClientVersion"
+    compile "ch.hsr:geohash:$hsrGeohashVersion"
+    compile "info.cukes:cucumber-testng:$cucumberVersion"
+    compile "info.cukes:cucumber-java:$cucumberVersion"
+    compile "info.cukes:cucumber-jvm:$cucumberVersion"
+    compile "net.javacrumbs.json-unit:json-unit:$jsonUnitVersion"
+    compile "xmlunit:xmlunit:$xmlUnitVersion"
+    compile "junit:junit:$jUnitVersion" //DO NOT USE JUNIT AT ALL IN THIS FRAMEWORK, THIS IS JUST NEEDED FOR XMLUNIT
+    compile "org.json:json:20140107"
+    compile "org.seleniumhq.selenium:selenium-java:2.45.0"
+
+    
+
+}
